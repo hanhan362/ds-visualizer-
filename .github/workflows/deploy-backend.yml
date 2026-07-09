@@ -1,0 +1,26 @@
+name: Deploy Backend to Railway
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'backend-node/**'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install
+        working-directory: backend-node
+      - run: npx prisma generate
+        working-directory: backend-node
+      - name: Deploy to Railway
+        uses: railwayapp/railway-deploy@v1
+        with:
+          service: ds-visualizer-api
+        env:
+          RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}

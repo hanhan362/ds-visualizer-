@@ -1,0 +1,45 @@
+# Dependencies
+node_modules/
+frontend/node_modules/
+backend-node/node_modules/
+
+# Build output
+dist/
+frontend/dist/
+backend-node/dist/
+backend/target/
+
+# IDE
+.idea/
+.vscode/
+*.iml
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Java
+*.class
+*.jar
+*.war
+
+# MySQL temp files
+reset-mysql.bat
+reset-mysql.ps1
+reset-pwd.sql
+
+# Dev scripts
+html2pdf.js
+md2pdf.py
+pack.ps1
+mvnw.bat
+
+# Environment
+.env
+.env.local
+
+# Logs
+*.log
+tunnel-url.txt

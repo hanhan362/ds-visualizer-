@@ -1,0 +1,74 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./data.db"
+}
+
+model User {
+  id        Int      @id @default(autoincrement())
+  username  String   @unique
+  password  String
+  email     String   @default("")
+  avatar    String   @default("")
+  createdAt DateTime @default(now()) @map("created_at")
+  @@map("users")
+}
+
+model Algorithm {
+  id              String  @id
+  name            String
+  timeComplexity  String  @map("time_complexity")
+  spaceComplexity String  @map("space_complexity")
+  stable          Boolean
+  @@map("algorithms")
+}
+
+model History {
+  id        Int      @id @default(autoincrement())
+  userId    Int      @map("user_id")
+  structure String
+  operation String
+  createdAt DateTime @default(now()) @map("created_at")
+  @@map("history")
+}
+
+model Favorite {
+  id        Int      @id @default(autoincrement())
+  userId    Int      @map("user_id")
+  structure String
+  createdAt DateTime @default(now()) @map("created_at")
+  @@map("favorites")
+}
+
+model Note {
+  id        Int      @id @default(autoincrement())
+  userId    Int      @map("user_id")
+  content   String
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+  @@map("notes")
+}
+
+model ExecutionHistory {
+  id          Int      @id @default(autoincrement())
+  algorithmId String   @map("algorithm_id")
+  inputSize   Int      @map("input_size")
+  comparisons Int
+  swaps       Int
+  timeMs      BigInt   @map("time_ms")
+  createdAt   DateTime @default(now()) @map("created_at")
+  @@map("execution_history")
+}
+
+model LearningProgress {
+  id             Int       @id @default(autoincrement())
+  userId         Int       @map("user_id")
+  algorithmId    String    @map("algorithm_id")
+  completedSteps Int?      @map("completed_steps")
+  score          Int
+  finishedAt     DateTime? @map("finished_at")
+  @@map("learning_progress")
+}

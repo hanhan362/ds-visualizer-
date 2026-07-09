@@ -1,0 +1,254 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 1100">
+  <defs>
+    <!-- 网格背景 -->
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1e293b" stroke-width="0.5"/>
+    </pattern>
+
+    <!-- 箭头 -->
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#64748b"/>
+    </marker>
+    <marker id="arrow-cyan" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#22d3ee"/>
+    </marker>
+    <marker id="arrow-emerald" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#34d399"/>
+    </marker>
+    <marker id="arrow-violet" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#a78bfa"/>
+    </marker>
+
+    <!-- 阴影 -->
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&amp;display=swap');
+    text { font-family: 'JetBrains Mono', 'Noto Sans SC', 'PingFang SC', sans-serif; }
+  </style>
+
+  <!-- 背景 -->
+  <rect width="100%" height="100%" fill="#0f172a"/>
+  <rect width="100%" height="100%" fill="url(#grid)"/>
+
+  <!-- ═══════════════ 标题 ═══════════════ -->
+  <text x="30" y="35" fill="#f8fafc" font-size="20" font-weight="700">DS-Visualizer 全栈系统架构图</text>
+  <text x="30" y="53" fill="#64748b" font-size="10">数据结构可视化教学平台 · Vue3 + Spring Boot + Canvas/SVG + MySQL</text>
+
+  <!-- ═══════════════ 第 1 层：用户浏览器 ═══════════════ -->
+  <rect x="420" y="75" width="260" height="50" rx="8" fill="#0f172a"/>
+  <rect x="420" y="75" width="260" height="50" rx="8" fill="rgba(8,51,68,0.4)" stroke="#22d3ee" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="550" y="100" fill="white" font-size="12" font-weight="600" text-anchor="middle">🌐 用户浏览器</text>
+  <text x="550" y="116" fill="#94a3b8" font-size="9" text-anchor="middle">Desktop / Mobile / Tablet</text>
+
+  <!-- 浏览器 → 前端 箭头 -->
+  <line x1="550" y1="125" x2="550" y2="155" stroke="#22d3ee" stroke-width="1.5" marker-end="url(#arrow-cyan)"/>
+
+  <!-- ═══════════════ 第 2 层：Vue3 前端系统 ═══════════════ -->
+  <rect x="30" y="160" width="1040" height="250" rx="12" fill="none" stroke="#22d3ee" stroke-width="1.5" stroke-dasharray="8,4"/>
+  <rect x="30" y="160" width="170" height="20" rx="5" fill="#22d3ee"/>
+  <text x="115" y="174" fill="#0f172a" font-size="10" font-weight="700" text-anchor="middle">Vue3 前端系统</text>
+
+  <!-- 可视化动画模块 -->
+  <rect x="55" y="195" width="480" height="90" rx="8" fill="#0f172a"/>
+  <rect x="55" y="195" width="480" height="90" rx="8" fill="rgba(8,51,68,0.35)" stroke="#22d3ee" stroke-width="1.2" filter="url(#shadow)"/>
+  <text x="295" y="218" fill="white" font-size="12" font-weight="600" text-anchor="middle">🎨 可视化动画模块</text>
+  <text x="295" y="236" fill="#94a3b8" font-size="9" text-anchor="middle">SVG 图形 · Canvas 排序动画 · D3.js 力导向图</text>
+  <text x="295" y="252" fill="#94a3b8" font-size="9" text-anchor="middle">GSAP 动画引擎 · 步骤生成器 · 颜色编码系统</text>
+  <!-- 子标签 -->
+  <rect x="70" y="262" width="58" height="16" rx="3" fill="rgba(34,211,238,0.15)" stroke="#22d3ee" stroke-width="0.6"/>
+  <text x="99" y="273" fill="#22d3ee" font-size="7" text-anchor="middle">SVG</text>
+  <rect x="134" y="262" width="58" height="16" rx="3" fill="rgba(34,211,238,0.15)" stroke="#22d3ee" stroke-width="0.6"/>
+  <text x="163" y="273" fill="#22d3ee" font-size="7" text-anchor="middle">Canvas</text>
+  <rect x="198" y="262" width="58" height="16" rx="3" fill="rgba(34,211,238,0.15)" stroke="#22d3ee" stroke-width="0.6"/>
+  <text x="227" y="273" fill="#22d3ee" font-size="7" text-anchor="middle">D3.js</text>
+  <rect x="262" y="262" width="58" height="16" rx="3" fill="rgba(34,211,238,0.15)" stroke="#22d3ee" stroke-width="0.6"/>
+  <text x="291" y="273" fill="#22d3ee" font-size="7" text-anchor="middle">GSAP</text>
+  <rect x="326" y="262" width="58" height="16" rx="3" fill="rgba(34,211,238,0.15)" stroke="#22d3ee" stroke-width="0.6"/>
+  <text x="355" y="273" fill="#22d3ee" font-size="7" text-anchor="middle">步骤动画</text>
+
+  <!-- 用户交互模块 -->
+  <rect x="565" y="195" width="480" height="90" rx="8" fill="#0f172a"/>
+  <rect x="565" y="195" width="480" height="90" rx="8" fill="rgba(8,51,68,0.35)" stroke="#22d3ee" stroke-width="1.2" filter="url(#shadow)"/>
+  <text x="805" y="218" fill="white" font-size="12" font-weight="600" text-anchor="middle">🖱 用户交互模块</text>
+  <text x="805" y="236" fill="#94a3b8" font-size="9" text-anchor="middle">Vue Router 页面路由 · Pinia 状态管理 · Element Plus UI</text>
+  <text x="805" y="252" fill="#94a3b8" font-size="9" text-anchor="middle">算法选择器 · 播放/暂停/步进控制 · 速度/进度条</text>
+  <!-- 子标签 -->
+  <rect x="580" y="262" width="58" height="16" rx="3" fill="rgba(34,211,238,0.15)" stroke="#22d3ee" stroke-width="0.6"/>
+  <text x="609" y="273" fill="#22d3ee" font-size="7" text-anchor="middle">Router</text>
+  <rect x="644" y="262" width="58" height="16" rx="3" fill="rgba(34,211,238,0.15)" stroke="#22d3ee" stroke-width="0.6"/>
+  <text x="673" y="273" fill="#22d3ee" font-size="7" text-anchor="middle">Pinia</text>
+  <rect x="708" y="262" width="72" height="16" rx="3" fill="rgba(34,211,238,0.15)" stroke="#22d3ee" stroke-width="0.6"/>
+  <text x="744" y="273" fill="#22d3ee" font-size="7" text-anchor="middle">Element Plus</text>
+
+  <!-- 代码编辑器模块 -->
+  <rect x="55" y="305" width="480" height="85" rx="8" fill="#0f172a"/>
+  <rect x="55" y="305" width="480" height="85" rx="8" fill="rgba(59,130,246,0.2)" stroke="#60a5fa" stroke-width="1.2" filter="url(#shadow)"/>
+  <text x="295" y="328" fill="#60a5fa" font-size="11" font-weight="600" text-anchor="middle">📝 代码编辑器模块（Monaco Editor）</text>
+  <text x="295" y="346" fill="#94a3b8" font-size="9" text-anchor="middle">用户编写数据结构代码 → 右侧实时可视化结构变化</text>
+  <text x="295" y="362" fill="#94a3b8" font-size="9" text-anchor="middle">类似 LeetCode 交互体验 · 代码执行分析</text>
+  <rect x="230" y="372" width="100" height="14" rx="3" fill="rgba(96,165,250,0.15)" stroke="#60a5fa" stroke-width="0.5"/>
+  <text x="280" y="382" fill="#60a5fa" font-size="7" text-anchor="middle">高级功能</text>
+
+  <!-- AI辅助模块 -->
+  <rect x="565" y="305" width="480" height="85" rx="8" fill="#0f172a"/>
+  <rect x="565" y="305" width="480" height="85" rx="8" fill="rgba(59,130,246,0.2)" stroke="#60a5fa" stroke-width="1.2" filter="url(#shadow)"/>
+  <text x="805" y="328" fill="#60a5fa" font-size="11" font-weight="600" text-anchor="middle">🤖 AI 辅助模块</text>
+  <text x="805" y="346" fill="#94a3b8" font-size="9" text-anchor="middle">自然语言提问 → AI 解释算法原理与复杂度</text>
+  <text x="805" y="362" fill="#94a3b8" font-size="9" text-anchor="middle">"为什么链表删除是 O(1)？" → 智能回答</text>
+  <rect x="740" y="372" width="100" height="14" rx="3" fill="rgba(96,165,250,0.15)" stroke="#60a5fa" stroke-width="0.5"/>
+  <text x="790" y="382" fill="#60a5fa" font-size="7" text-anchor="middle">OpenAI API</text>
+
+  <!-- 前端 → API 箭头 -->
+  <line x1="550" y1="410" x2="550" y2="445" stroke="#22d3ee" stroke-width="2" marker-end="url(#arrow-cyan)"/>
+
+  <!-- ═══════════════ 第 3 层：REST API ═══════════════ -->
+  <rect x="200" y="450" width="700" height="55" rx="8" fill="#0f172a"/>
+  <rect x="200" y="450" width="700" height="55" rx="8" fill="rgba(251,146,60,0.15)" stroke="#fb923c" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="550" y="472" fill="#fb923c" font-size="12" font-weight="700" text-anchor="middle">REST API 网关（axios + Vite Proxy → localhost:8080）</text>
+  <text x="550" y="492" fill="#94a3b8" font-size="9" text-anchor="middle">GET /api/algorithms  |  POST /api/sort/{id}  |  GET /api/sort/history  |  POST /api/auth/login</text>
+
+  <!-- API → 后端 箭头 -->
+  <line x1="550" y1="505" x2="550" y2="540" stroke="#fb923c" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- ═══════════════ 第 4 层：Spring Boot 后端 ═══════════════ -->
+  <rect x="30" y="545" width="1040" height="245" rx="12" fill="none" stroke="#34d399" stroke-width="1.5" stroke-dasharray="8,4"/>
+  <rect x="30" y="545" width="185" height="20" rx="5" fill="#34d399"/>
+  <text x="122" y="559" fill="#0f172a" font-size="10" font-weight="700" text-anchor="middle">Spring Boot 后端</text>
+
+  <!-- Controller 层 -->
+  <rect x="55" y="580" width="310" height="70" rx="8" fill="#0f172a"/>
+  <rect x="55" y="580" width="310" height="70" rx="8" fill="rgba(6,78,59,0.35)" stroke="#34d399" stroke-width="1.2"/>
+  <text x="210" y="604" fill="white" font-size="11" font-weight="600" text-anchor="middle">📡 Controller 层</text>
+  <text x="210" y="622" fill="#94a3b8" font-size="9" text-anchor="middle">AlgorithmController · AuthController</text>
+  <text x="210" y="638" fill="#94a3b8" font-size="9" text-anchor="middle">接收请求 · 参数校验 · 返回 JSON</text>
+
+  <!-- Service 层 -->
+  <rect x="55" y="665" width="310" height="60" rx="8" fill="#0f172a"/>
+  <rect x="55" y="665" width="310" height="60" rx="8" fill="rgba(6,78,59,0.35)" stroke="#34d399" stroke-width="1.2"/>
+  <text x="210" y="688" fill="white" font-size="11" font-weight="600" text-anchor="middle">⚙️ Service 业务层</text>
+  <text x="210" y="706" fill="#94a3b8" font-size="9" text-anchor="middle">AlgorithmService · UserService</text>
+
+  <!-- Controller → Service 箭头 -->
+  <line x1="210" y1="650" x2="210" y2="660" stroke="#34d399" stroke-width="1.2" marker-end="url(#arrow-emerald)"/>
+
+  <!-- 算法引擎核心（重点） -->
+  <rect x="395" y="580" width="650" height="145" rx="8" fill="#0f172a"/>
+  <rect x="395" y="580" width="650" height="145" rx="8" fill="rgba(6,78,59,0.35)" stroke="#34d399" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="720" y="604" fill="#34d399" font-size="13" font-weight="700" text-anchor="middle">🧠 算法引擎核心（SortEngine 接口 + 策略模式）</text>
+
+  <!-- 算法子模块 -->
+  <!-- 排序算法 -->
+  <rect x="410" y="618" width="195" height="50" rx="6" fill="#0f172a"/>
+  <rect x="410" y="618" width="195" height="50" rx="6" fill="rgba(6,78,59,0.3)" stroke="#34d399" stroke-width="1"/>
+  <text x="507" y="638" fill="white" font-size="9" font-weight="600" text-anchor="middle">📊 排序算法</text>
+  <text x="507" y="654" fill="#94a3b8" font-size="7" text-anchor="middle">冒泡 · 选择 · 插入 · 快速 · 归并</text>
+
+  <!-- 线性结构 -->
+  <rect x="620" y="618" width="195" height="50" rx="6" fill="#0f172a"/>
+  <rect x="620" y="618" width="195" height="50" rx="6" fill="rgba(6,78,59,0.3)" stroke="#34d399" stroke-width="1"/>
+  <text x="717" y="638" fill="white" font-size="9" font-weight="600" text-anchor="middle">📋 线性结构</text>
+  <text x="717" y="654" fill="#94a3b8" font-size="7" text-anchor="middle">Array · Linked List · Stack · Queue</text>
+
+  <!-- 树结构 -->
+  <rect x="830" y="618" width="195" height="50" rx="6" fill="#0f172a"/>
+  <rect x="830" y="618" width="195" height="50" rx="6" fill="rgba(6,78,59,0.3)" stroke="#34d399" stroke-width="1"/>
+  <text x="927" y="638" fill="white" font-size="9" font-weight="600" text-anchor="middle">🌳 树结构</text>
+  <text x="927" y="654" fill="#94a3b8" font-size="7" text-anchor="middle">Binary Tree · BST · AVL · Heap</text>
+
+  <!-- 图结构 -->
+  <rect x="410" y="678" width="195" height="38" rx="6" fill="#0f172a"/>
+  <rect x="410" y="678" width="195" height="38" rx="6" fill="rgba(6,78,59,0.3)" stroke="#34d399" stroke-width="1"/>
+  <text x="507" y="696" fill="white" font-size="9" font-weight="600" text-anchor="middle">🕸 图结构</text>
+  <text x="507" y="710" fill="#94a3b8" font-size="7" text-anchor="middle">BFS · DFS · Dijkstra · Prim</text>
+
+  <!-- 搜索算法 -->
+  <rect x="620" y="678" width="195" height="38" rx="6" fill="#0f172a"/>
+  <rect x="620" y="678" width="195" height="38" rx="6" fill="rgba(6,78,59,0.3)" stroke="#34d399" stroke-width="1"/>
+  <text x="717" y="696" fill="white" font-size="9" font-weight="600" text-anchor="middle">🔍 搜索算法</text>
+  <text x="717" y="710" fill="#94a3b8" font-size="7" text-anchor="middle">线性 · 二分 · 哈希 · KMP</text>
+
+  <!-- 算法引擎标签 -->
+  <rect x="830" y="678" width="195" height="38" rx="6" fill="#0f172a"/>
+  <rect x="830" y="678" width="195" height="38" rx="6" fill="rgba(251,191,36,0.2)" stroke="#fbbf24" stroke-width="1"/>
+  <text x="927" y="696" fill="#fbbf24" font-size="9" font-weight="600" text-anchor="middle">⚡ 动画步骤生成</text>
+  <text x="927" y="710" fill="#94a3b8" font-size="7" text-anchor="middle">每步记录 compare/swap/sorted</text>
+
+  <!-- Service → 算法引擎 箭头 -->
+  <line x1="365" y1="695" x2="390" y2="650" stroke="#34d399" stroke-width="1.2" marker-end="url(#arrow-emerald)"/>
+
+  <!-- 用户系统 + JWT -->
+  <rect x="55" y="735" width="310" height="40" rx="6" fill="#0f172a"/>
+  <rect x="55" y="735" width="310" height="40" rx="6" fill="rgba(6,78,59,0.25)" stroke="#34d399" stroke-width="1"/>
+  <text x="210" y="754" fill="white" font-size="9" font-weight="600" text-anchor="middle">👤 用户系统（Spring Security + JWT）</text>
+  <text x="210" y="768" fill="#94a3b8" font-size="7" text-anchor="middle">注册 · 登录 · 进度保存 · 做题记录</text>
+
+  <!-- 后端 → 数据库 箭头 -->
+  <line x1="210" y1="775" x2="210" y2="830" stroke="#a78bfa" stroke-width="1.5" marker-end="url(#arrow-violet)"/>
+
+  <!-- ═══════════════ 第 5 层：数据库 + 基础设施 ═══════════════ -->
+  <rect x="30" y="815" width="1040" height="125" rx="12" fill="none" stroke="#a78bfa" stroke-width="1.5" stroke-dasharray="8,4"/>
+  <rect x="30" y="815" width="145" height="20" rx="5" fill="#a78bfa"/>
+  <text x="102" y="829" fill="#0f172a" font-size="10" font-weight="700" text-anchor="middle">数据 &amp; 基础设施</text>
+
+  <!-- MySQL 数据库 -->
+  <g transform="translate(65, 845)">
+    <rect x="0" y="12" width="280" height="55" rx="2" fill="#0f172a"/>
+    <ellipse cx="140" cy="12" rx="140" ry="16" fill="#0f172a"/>
+    <ellipse cx="140" cy="67" rx="140" ry="16" fill="#0f172a"/>
+    <rect x="0" y="12" width="280" height="55" fill="rgba(76,29,149,0.35)"/>
+    <ellipse cx="140" cy="12" rx="140" ry="16" fill="rgba(76,29,149,0.35)" stroke="#a78bfa" stroke-width="1.5"/>
+    <ellipse cx="140" cy="67" rx="140" ry="16" fill="rgba(76,29,149,0.35)" stroke="#a78bfa" stroke-width="1.5"/>
+    <line x1="0" y1="12" x2="0" y2="67" stroke="#a78bfa" stroke-width="1.5"/>
+    <line x1="280" y1="12" x2="280" y2="67" stroke="#a78bfa" stroke-width="1.5"/>
+    <text x="140" y="42" fill="white" font-size="10" font-weight="600" text-anchor="middle">🐬 MySQL 数据库</text>
+    <text x="140" y="56" fill="#94a3b8" font-size="7" text-anchor="middle">User · Algorithm · Progress</text>
+  </g>
+
+  <!-- Docker -->
+  <rect x="385" y="845" width="210" height="80" rx="8" fill="#0f172a"/>
+  <rect x="385" y="845" width="210" height="80" rx="8" fill="rgba(59,130,246,0.15)" stroke="#60a5fa" stroke-width="1.2" filter="url(#shadow)"/>
+  <text x="490" y="872" fill="white" font-size="11" font-weight="600" text-anchor="middle">🐳 Docker 容器化</text>
+  <text x="490" y="890" fill="#94a3b8" font-size="9" text-anchor="middle">前端容器 + 后端容器</text>
+  <text x="490" y="906" fill="#94a3b8" font-size="9" text-anchor="middle">Docker Compose 编排</text>
+
+  <!-- Linux / 部署 -->
+  <rect x="625" y="845" width="210" height="80" rx="8" fill="#0f172a"/>
+  <rect x="625" y="845" width="210" height="80" rx="8" fill="rgba(59,130,246,0.15)" stroke="#60a5fa" stroke-width="1.2" filter="url(#shadow)"/>
+  <text x="730" y="872" fill="white" font-size="11" font-weight="600" text-anchor="middle">🐧 Linux 服务器</text>
+  <text x="730" y="890" fill="#94a3b8" font-size="9" text-anchor="middle">Nginx 反向代理</text>
+  <text x="730" y="906" fill="#94a3b8" font-size="9" text-anchor="middle">SSL · 域名 · CI/CD</text>
+
+  <!-- MyBatis Plus -->
+  <rect x="865" y="845" width="185" height="80" rx="8" fill="#0f172a"/>
+  <rect x="865" y="845" width="185" height="80" rx="8" fill="rgba(251,191,36,0.15)" stroke="#fbbf24" stroke-width="1.2" filter="url(#shadow)"/>
+  <text x="957" y="872" fill="white" font-size="10" font-weight="600" text-anchor="middle">MyBatis Plus</text>
+  <text x="957" y="890" fill="#94a3b8" font-size="9" text-anchor="middle">ORM 数据映射</text>
+  <text x="957" y="906" fill="#94a3b8" font-size="9" text-anchor="middle">代码生成器</text>
+
+  <!-- ═══════════════ 图例 ═══════════════ -->
+  <rect x="30" y="960" width="1040" height="120" rx="10" fill="rgba(15,23,42,0.8)" stroke="#334155" stroke-width="1"/>
+  <text x="50" y="984" fill="#94a3b8" font-size="10" font-weight="600">图例</text>
+
+  <rect x="50" y="998" width="16" height="12" rx="3" fill="rgba(34,211,238,0.5)" stroke="#22d3ee" stroke-width="1"/>
+  <text x="72" y="1008" fill="#94a3b8" font-size="9">前端 / 用户交互</text>
+
+  <rect x="200" y="998" width="16" height="12" rx="3" fill="rgba(251,146,60,0.5)" stroke="#fb923c" stroke-width="1"/>
+  <text x="222" y="1008" fill="#94a3b8" font-size="9">API 网关</text>
+
+  <rect x="330" y="998" width="16" height="12" rx="3" fill="rgba(52,211,153,0.5)" stroke="#34d399" stroke-width="1"/>
+  <text x="352" y="1008" fill="#94a3b8" font-size="9">后端 / 算法引擎</text>
+
+  <rect x="500" y="998" width="16" height="12" rx="3" fill="rgba(167,139,250,0.5)" stroke="#a78bfa" stroke-width="1"/>
+  <text x="522" y="1008" fill="#94a3b8" font-size="9">数据库 / 基础设施</text>
+
+  <rect x="660" y="998" width="16" height="12" rx="3" fill="rgba(96,165,250,0.5)" stroke="#60a5fa" stroke-width="1"/>
+  <text x="682" y="1008" fill="#94a3b8" font-size="9">高级 / 创新功能</text>
+
+  <!-- 图例第二行 -->
+  <text x="50" y="1038" fill="#64748b" font-size="8">技术栈：Vue3 · TypeScript · Canvas · SVG · D3.js · GSAP · Pinia · Element Plus | Spring Boot · MyBatis Plus · JWT · MySQL | Docker · Nginx · Linux</text>
+  <text x="50" y="1056" fill="#64748b" font-size="8">MVP 第一阶段：Array · Linked List · Stack · Queue · Binary Tree · 冒泡排序 · 快速排序 · 动画控制 · 复杂度展示 → 优秀本科课设水平</text>
+</svg>
