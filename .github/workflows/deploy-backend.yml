@@ -6,6 +6,7 @@ on:
     paths:
       - 'backend-node/**'
       - 'frontend/**'
+      - '.github/workflows/deploy-backend.yml'
 
 jobs:
   deploy:
