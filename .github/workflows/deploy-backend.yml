@@ -1,4 +1,4 @@
-name: Deploy to Railway
+name: Build and Deploy to Railway
 
 on:
   push:
@@ -9,7 +9,7 @@ on:
       - '.github/workflows/deploy-backend.yml'
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -18,7 +18,7 @@ jobs:
         with:
           node-version: 22
 
-      # 1. 安装后端依赖 + 生成 Prisma Client
+      # 1. 后端依赖 + Prisma Client
       - run: npm install
         working-directory: backend-node
       - run: npx prisma generate
@@ -30,14 +30,7 @@ jobs:
       - run: npm run build
         working-directory: frontend
 
-      # 3. 把前端构建产物复制到后端目录
+      # 3. 复制前端产物到后端
       - run: cp -r frontend/dist backend-node/frontend-dist
 
-      # 4. 安装 Railway CLI 并部署
-      - name: Deploy to Railway
-        run: |
-          npm install -g @railway/cli
-          railway up --service=ds-visualizer-
-        working-directory: backend-node
-        env:
-          RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
+      # Railway GitHub App 会自动检测并部署 backend-node 目录
