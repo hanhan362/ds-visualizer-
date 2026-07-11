@@ -13,10 +13,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      # 1. 安装后端依赖 + 生成 Prisma Client
       - uses: actions/setup-node@v4
         with:
           node-version: 22
+
+      # 1. 安装后端依赖 + 生成 Prisma Client
       - run: npm install
         working-directory: backend-node
       - run: npx prisma generate
@@ -31,10 +32,11 @@ jobs:
       # 3. 把前端构建产物复制到后端目录
       - run: cp -r frontend/dist backend-node/frontend-dist
 
-      # 4. 部署到 Railway
+      # 4. 安装 Railway CLI 并部署
       - name: Deploy to Railway
-        uses: railwayapp/railway-deploy@v1
-        with:
-          service: ds-visualizer-api
+        run: |
+          npm install -g @railway/cli
+          railway up --service=ds-visualizer-api
+        working-directory: backend-node
         env:
           RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
