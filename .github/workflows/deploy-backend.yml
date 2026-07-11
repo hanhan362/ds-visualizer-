@@ -37,7 +37,7 @@ jobs:
       - name: Deploy to Railway
         run: |
           npm install -g @railway/cli
-          railway up --service=ds-visualizer-api
+          railway up --service=ds-visualizer-
         working-directory: backend-node
         env:
           RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
